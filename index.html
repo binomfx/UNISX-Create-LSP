@@ -24,18 +24,18 @@
         </style>
         <script>
             var network= 'Ethereum Mainnet'
-            var address = '0x5E667a7720179337679a51d5676ea123BF0fdA1C'
+            var user_address = '0x5E667a7720179337679a51d5676ea123BF0fdA1C'
         </script>
 
     </head>
 <body>
     <p>
+    <script type="text/javascript">    
         <span class="header">LSP      
-            Network: 
-            <span class="nw_vals">network</span>         
-            Address: 
-            <span class="nw_vals">address</span>
-        <button type="button" style="horizontal-align: right>Connect</button></span>
+            Network: <span class="nw_vals">document.write (network);</span>         
+            Address: <span class="nw_vals">document.write (user_address);</span>
+        <button type="button" onclick="connect_wallet();">Connect</button></span>
+    </script>
     </p>
     <br><br>
 <p>Synt Parameters</p><br>
@@ -64,6 +64,11 @@
                     document.writeln("<\/tr>");
             }
             document.write ("<\/table> ");
+       
+            function connect_wallet()
+            {
+            }
+    
         </script>
 
    

@@ -34,43 +34,31 @@
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
     <p><span class="header">LSP
     <script type="text/javascript">    
-            Network: <span class="nw_vals">document.write (network);</span>         
-            Address: <span class="nw_vals">document.write (user_address);</span>
-            <button type="button" onclick="connect_wallet();">Connect</button>
+            document.write ("Network:"); document.write ('<span class="nw_vals">' + network + "</span>");         
+            document.write ("Address:"); document.write ('<span class="nw_vals">' + user_address + "</span>");
     </script>
+    <button type="button" onclick="connect_wallet();">Connect</button>
     </span></p><br>
     <p><span class="header">Synt Parameters</span></p><br>
 
-    <form action="index.html" method="post">
-        
-          <label for="name">Name</label>
-          <input type="text" id="name" name="student_name">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="student_name">
+    <br>
+    <label for="mail">Email</label>
+    <input type="email" id="mail" name="student_email">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="student_password">
+    <br>  
+    <button type="button">Deploy</button>
 
-          <label for="mail">Email</label>
-          <input type="email" id="mail" name="student_email">
-
-          <label for="password">Password</label>
-          <input type="password" id="password" name="student_password">
-          
-          <button type="submit">Submit</button>
-        
-      </form>
-
-      <script type="text/javascript">
-            document.write ('<table width="100%" border="1">');
-            for (i=1; i<6; i++) {
-                document.writeln("<tr>");
-                for (j=1; j<6; j++) document.write("<td>" + i + j + "<\/td>");
-                    document.writeln("<\/tr>");
-            }
-            document.write ("<\/table> ");
-       
+    <!-- Функции Java Script -->
+    <script type="text/javascript">
             function connect_wallet()
             {
             }
-    
-        </script>
+    </script>
 
    
-        </body>
+    </body>
 </html>

@@ -11,13 +11,16 @@
             .line {
                border-bottom: 1px solid #000; /* Параметры линии */
             }
-        </style>
-        <style>
             table {
-            width: 100%;
-            color: white;
-            background: black;
-            border="0";
+                width: 100%;
+                color: white;
+                background: black;
+                border: 0;
+                cellpadding: 4;
+            }
+            tr {
+                align: right; 
+                valign: top;
             }
         </style>
         <script>
@@ -30,8 +33,8 @@
     <body>
     
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
-    <table  cellpadding="4">
-        <tr align="right" valign="top">
+    <table>
+        <tr>
             <td align="left">LSP</td>
             <td>Network:</td>
             <td bgcolor="red" align="left"><script type="text/javascript">document.write (network);</script></td>
@@ -41,7 +44,6 @@
         </tr>
     </table>
 
-    <div class="line">Synt Parameters</div>
                 
     <!-- Функции Java Script -->
     <script type="text/javascript">

@@ -4,9 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LSP Creator</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
         <style>
             .line {
                 border-bottom: 2px solid #000; /* Параметры линии */
@@ -62,7 +59,7 @@
             <td class="val1"><script type="text/javascript">document.write (network);</script></td>
             <td>Address:</td>
             <td class="val1"><script type="text/javascript">document.write (user_address);</script></td>
-            <td><button onclick="connectMetamask();">Connect</button></td>
+            <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
 
@@ -75,7 +72,8 @@
 <!-- **************************************************************************************************** -->
 <!--                                          ПОДКЛЮЧЕНИЕ КОШЕЛЬКА                                        -->
 <!-- **************************************************************************************************** -->
-
+function connectWallet() {
+}
   
 class MetamaskError extends Error {}
 

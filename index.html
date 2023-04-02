@@ -69,33 +69,36 @@
                 }
                 location.reload();
             }
-                
-            if (window.ethereum && window.ethereum.isConnected()) {
-                console.log('Metamask is connected!');
-                window.ethereum.enable().then((accounts) => {
-                        user_address = accounts[0];
-                });
-                switch (parseInt(window.ethereum.chainId)) {
-                        case "1":
-                                network = "Ethereum Mainnet";
-                                break;
-                        case "3":
-                                network = "Ropsten Testnet";
-                                break;
-                        case "4":
-                                network = "Rinkeby Testnet";
-                                break;
-                        case "5":
-                                network = "Goerli Testnet";
-                                break;
-                        case "42":
-                                network = "Kovan Testnet";
-                                break;
-                        default:
-                                network = "Unknown Network";
+
+            
+            function checkWallet () {
+                if (window.ethereum && window.ethereum.isConnected()) {
+                    console.log('Metamask is connected!');
+                    window.ethereum.enable().then((accounts) => {
+                            user_address = accounts[0];
+                    });
+                   switch (parseInt(window.ethereum.chainId)) {
+                            case "1":
+                                    network = "Ethereum Mainnet";
+                                    break;
+                            case "3":
+                                    network = "Ropsten Testnet";
+                                    break;
+                            case "4":
+                                    network = "Rinkeby Testnet";
+                                    break;
+                            case "5":
+                                    network = "Goerli Testnet";
+                                    break;
+                            case "42":
+                                    network = "Kovan Testnet";
+                                    break;
+                            default:
+                                    network = "Unknown Network";
+                    }
+                } else {
+                      console.log('Metamask is not connected!');
                 }
-            } else {
-                  console.log('Metamask is not connected!');
             }
         </script>
     </head>
@@ -103,6 +106,7 @@
     <body>
     
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
+    <script type="text/javascript">checkWallet ();</script>
     <table>
         <tr>
             <td class="logo">LSP</td>

@@ -43,8 +43,8 @@
             }
         </style>
         <script>
-            var network= 'none';
-            var user_address = 'none';
+            var network= 'none'
+            var user_address = 'none'
 
             function connectWallet() {
                 const Web3 = require('web3');
@@ -52,11 +52,7 @@
                 location.reload();
             }
                 
-            function isConnected() {
-                  return window.ethereum && window.ethereum.isConnected()
-            }
-                
-            if isConnected() {
+            if (window.ethereum && window.ethereum.isConnected()) {
                 console.log('Metamask is connected!');
                 window.ethereum.enable().then((accounts) => {
                         user_address = accounts[0];

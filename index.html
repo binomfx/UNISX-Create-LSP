@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="css/main.css">
         <style>
             .line {
-               border-bottom: 1px solid #000; /* Параметры линии */
+                border-bottom: 2px solid #000; /* Параметры линии */
+                vertical-align: center;
             }
             table {
                 width: 100%;
@@ -20,10 +21,10 @@
             }
             tr {
                 text-align: right;
-                vertical-align: top;
+                vertical-align: center;
                 padding: 4px;
             }
-            .td_red {
+            .val1 {
                 background: red; 
                 text-align: left;
             }
@@ -42,9 +43,9 @@
         <tr>
             <td>LSP</td>
             <td>Network:</td>
-            <td class="td_red"><script type="text/javascript">document.write (network);</script></td>
+            <td class="val1"><script type="text/javascript">document.write (network);</script></td>
             <td>Address:</td>
-            <td class="td_red"><script type="text/javascript">document.write (user_address);</script></td>
+            <td class="val1"><script type="text/javascript">document.write (user_address);</script></td>
             <td><button onclick="connect_wallet();">Connect</button></td>
         </tr>
     </table>

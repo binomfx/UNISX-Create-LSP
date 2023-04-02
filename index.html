@@ -45,6 +45,9 @@
         <script>
             var network= 'none'
             var user_address = 'none'
+            function connectWallet() {
+                network = "Ethereum Mainnet";    
+            }
         </script>
 
     </head>
@@ -72,9 +75,6 @@
 <!-- **************************************************************************************************** -->
 <!--                                          ПОДКЛЮЧЕНИЕ КОШЕЛЬКА                                        -->
 <!-- **************************************************************************************************** -->
-function connectWallet() {
-    network = "Ethereum Mainnet";    
-}
   
 class MetamaskError extends Error {}
 

@@ -50,7 +50,7 @@
             let web3 = null
             let provider = null
 
-            async connectWallet () {
+            function async connectWallet () {
                 if (window.ethereum) { // проверяем есть ли кошелек
                     // сохраняем экземпляр для дальнейшей инициализации web3Provider
                     provider = window.ethereum 

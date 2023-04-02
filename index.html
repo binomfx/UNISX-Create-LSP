@@ -1,9 +1,45 @@
         <script>
-            const network= 'none'
-            const user_address = 'none'
+            var network= 'none'
+            var user_address = 'none'
+            
+            if isConnected() {
+                console.log('Metamask is connected!');
+                window.ethereum.enable().then((accounts) => {
+                        user_address = accounts[0];
+                });
+                const provider = window.ethereum;
+                const networkId = await provider.request({ method: 'net_version' });
+                switch (parseInt(window.ethereum.chainId)) {
+                        case "1":
+                                network = "Ethereum Mainnet";
+                                break;
+                        case "3":
+                                network = "Ropsten Testnet";
+                                break;
+                        case "4":
+                                network = "Rinkeby Testnet";
+                                break;
+                        case "5":
+                                network = "Goerli Testnet";
+                                break;
+                        case "42":
+                                network = "Kovan Testnet";
+                                break;
+                        default:
+                                network = "Unknown Network";
+                }
+            } else {
+                  console.log('Metamask is not connected!');
+            }
+            
             function connectWallet() {
-                network = "Ethereum Mainnet";
+                const Web3 = require('web3');
+                const web3 = new Web3(window.ethereum);
                 location.reload();
+            }
+                
+            function isConnected(){
+                  return window.ethereum && window.ethereum.isConnected()
             }
         </script>
 
@@ -159,32 +195,9 @@ export async function connectMetamask(acc){
         user_address = accounts[0];
     });
     
-    switch (parseInt(window.ethereum.chainId)) {
-        case "1":
-            network = "Ethereum Mainnet";
-            break;
-        case "3":
-            network = "Ropsten Testnet";
-            break;
-        case "4":
-            network = "Rinkeby Testnet";
-            break;
-        case "5":
-            network = "Goerli Testnet";
-            break;
-        case "42":
-            network = "Kovan Testnet";
-            break;
-        default:
-            network = "Unknown Network";
-    }    
     
 
 }
-
-export function isConnected(){
-  return window.ethereum && window.ethereum.isConnected()
-}    
         
         
         

@@ -33,13 +33,19 @@
     <body>
     
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
-    <p width="100%"><span class="header">LSP
-    <script type="text/javascript">    
-            document.write ("     Network:"); document.write ('<span class="nw_vals">' + network + "</span>");         
-            document.write ("     Address:"); document.write ('<span class="nw_vals">' + user_address + "     </span>");
-    </script>
-    <button type="button" onclick="connect_wallet()>Connect</button>
-    </span></p><br>
+    <table bgcolor="black" FONT COLOR="white" width="100%" border="0" cellpadding="4">
+        <tr align="right" valign="top">
+            <td>LSP</td>
+            <td>Network:</td>
+            <td bgcolor="red"><script type="text/javascript">document.write (network);</script></td>
+            <td>Address:</td>
+            <td bgcolor="red"><script type="text/javascript">document.write (user_address);</script></td>
+            <td><button type="button" onclick="connect_wallet()>Connect</button></td>
+        </tr>
+    </table>
+
+                                   
+                                   
     <p width="100%"><span class="header">Synt Parameters</span></p><br>
 
     <label for="name">Name</label>

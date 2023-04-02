@@ -57,8 +57,6 @@
                 window.ethereum.enable().then((accounts) => {
                         user_address = accounts[0];
                 });
-                const provider = window.ethereum;
-                const networkId = await provider.request({ method: 'net_version' });
                 switch (parseInt(window.ethereum.chainId)) {
                         case "1":
                                 network = "Ethereum Mainnet";

@@ -12,19 +12,30 @@
                 border-bottom: 2px solid #000; /* Параметры линии */
                 vertical-align: center;
             }
+            .lntxt {overflow:hidden}
+            .lntxt:before,.lndot:after {
+                content:'';display:inline-block;vertical-align:middle;
+                box-sizing:border-box;width:100%;height:2px;
+                background:rgb(230,235,235); 
+                border:solid #FFF;
+                 border-width:0 .5em 0;
+            }
+            .lntxt:before {margin-left:-100%}
+            .lntxt:after {margin-right:-100%}
             table {
                 width: 100%;
                 color: white;
                 background: black;
                 border-spacing: 0px;
-                padding: 4px;
+                padding: 0px;
             }
             tr {
                 text-align: right;
                 vertical-align: center;
-                padding: 4px;
+                padding: 0px;
             }
             .val1 {
+                width: 0;
                 background: red; 
                 text-align: left;
             }
@@ -51,7 +62,7 @@
     </table>
 
         
-    <div class="line">Synt Parameters</div>
+    <p class="lntxt">Synt Parameters</p>
                 
     <!-- Функции Java Script -->
     <script type="text/javascript">

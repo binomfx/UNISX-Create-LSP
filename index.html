@@ -50,23 +50,22 @@
             let web3 = null
             let provider = null
 
-            function async connectWallet () {
+            function connectWallet () {
                 if (window.ethereum) { // проверяем есть ли кошелек
                     // сохраняем экземпляр для дальнейшей инициализации web3Provider
                     provider = window.ethereum 
-                    try {
-                        // получаем учетные записи кошелька
-                        await window.ethereum.request({ method: 'eth_requestAccounts' })
-                    } catch (e) {
-                        console.error(e)
-                        if (e.code === 4001) return
-                      }
+                    window.ethereum.enable().then((accounts) => {
+                        user_address = accounts[0];
+                    });
+                    if (user_address == null) {
+                        return
+                    }
                 } else if (window.web3) {
                     provider = window.web3.currentProvider
                 }
                 if (provider) {
-                        // инициалзируем web3 provider
-                        web3 = new ethers.providers.Web3Provider(provider, 'any')
+                    // инициалзируем web3 provider
+                    web3 = new ethers.providers.Web3Provider(provider, 'any')
                 }
                 location.reload();
             }

@@ -15,13 +15,15 @@
                 width: 100%;
                 color: white;
                 background: black;
-                border: 0;
-                cellpadding: 4;
+                border-spacing: 0px;
+                padding: 4px;
             }
             tr {
-                align: right; 
-                valign: top;
+                text-align: right;
+                vertical-align: top;
+                padding: 4px;
             }
+            .td_red {background: red; text-align: left;}
         </style>
         <script>
             var network= 'Ethereum Mainnet'
@@ -35,11 +37,11 @@
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
     <table>
         <tr>
-            <td align="left">LSP</td>
+            <td>LSP</td>
             <td>Network:</td>
-            <td bgcolor="red" align="left"><script type="text/javascript">document.write (network);</script></td>
+            <td class="tr_red"><script type="text/javascript">document.write (network);</script></td>
             <td>Address:</td>
-            <td bgcolor="red" align="left"><script type="text/javascript">document.write (user_address);</script></td>
+            <td class="tr_red"><script type="text/javascript">document.write (user_address);</script></td>
             <td><button onclick="connect_wallet()>Connect</button></td>
         </tr>
     </table>

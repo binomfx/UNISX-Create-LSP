@@ -43,12 +43,31 @@
             }
         </style>
         <script>
+            import { ethers } from 'ethers'
+            
             var network= 'none'
             var user_address = 'none'
+            let web3 = null
+            let provider = null
 
-            function connectWallet() {
-                const Web3 = require('web3');
-                const web3 = new Web3(window.ethereum);
+            async connectWallet () {
+                if (window.ethereum) { // проверяем есть ли кошелек
+                    // сохраняем экземпляр для дальнейшей инициализации web3Provider
+                    provider = window.ethereum 
+                    try {
+                        // получаем учетные записи кошелька
+                        await window.ethereum.request({ method: 'eth_requestAccounts' })
+                    } catch (e) {
+                        console.error(e)
+                        if (e.code === 4001) return
+                      }
+                } else if (window.web3) {
+                    provider = window.web3.currentProvider
+                }
+                if (provider) {
+                        // инициалзируем web3 provider
+                        web3 = new ethers.providers.Web3Provider(provider, 'any')
+                }
                 location.reload();
             }
                 

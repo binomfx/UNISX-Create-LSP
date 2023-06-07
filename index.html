@@ -79,10 +79,11 @@
                 if (provider) {
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
-                    const networkId = await provider.request({ method: 'net_version' });
-                    console.log('networkId=');
-                    console.log(networkId);
-                    switch (parseInt(networkId)) {
+                    localStorage.setItem("networkId",await provider.request({ method: 'net_version' }));
+                    //const networkId = await provider.request({ method: 'net_version' });
+                    //console.log('networkId=');
+                    //console.log(networkId);
+                    switch (localStorage.getItem("networkId")) {
                             case "1":
                                     network = "Ethereum Mainnet";
                                     break;

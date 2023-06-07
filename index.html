@@ -56,8 +56,8 @@
     <!-- ************************************************************************* -->    
         <script>
             
-            var network= 'none'
-            var user_address = 'none'
+            var network= 'none 1'
+            var user_address = 'none 2'
             let web3 = null
             let provider = null
 
@@ -140,13 +140,13 @@
                 }
             }
             
-            async function getNetwork() {
+            function getNetwork() {
                 console.log('network=');
                 console.log(network);
                 return (network);
             }
                 
-            async function getUserAddress() {
+            function getUserAddress() {
                 console.log('user_address=');
                 console.log(user_address);
                 return (user_address);
@@ -161,9 +161,9 @@
         <tr>
             <td class="logo">LSP</td>
             <td>Network:</td>
-            <td class="val1"><script type="text/javascript async">document.write (getNetwork());</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getNetwork());</script></td>
             <td>Address:</td>
-            <td class="val1"><script type="text/javascript async">document.write (getUserAddress());</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getUserAddress());</script></td>
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>

@@ -42,8 +42,15 @@
                 white-space: nowrap;
             }
         </style>
-        
+    </head>
+
+    
     <!-- ************************************************************************* -->    
+    <!-- ************************************************************************* -->    
+    <!-- ************************************************************************* -->    
+    <body>
+    
+        <!-- ************************************************************************* -->    
     <!--                           Подключить кошелек Metamask                     -->    
     <!-- ************************************************************************* -->    
         <script>
@@ -194,22 +201,16 @@ export function isConnected(){
                       console.log('Metamask is not connected!');
                 }
             }
-        </script>
-    </head>
-
-    
-    <!-- ************************************************************************* -->    
-    <!-- ************************************************************************* -->    
-    <!-- ************************************************************************* -->    
-    <body>
-    
+        </script>    
+        
+        
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
     <script type="text/javascript">checkWallet ();</script>
     <table>
         <tr>
             <td class="logo">LSP</td>
             <td>Network:</td>
-            <td class="val1"><script type="text/javascript">document.write (getUserNetwork ());</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getNetwork ());</script></td>
             <td>Address:</td>
             <td class="val1"><script type="text/javascript">document.write (getUserAddress ());</script></td>
             <td><button onclick="connectWallet();">Connect</button></td>

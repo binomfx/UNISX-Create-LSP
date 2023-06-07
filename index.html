@@ -68,8 +68,6 @@
                     provider = window.ethereum 
                     window.ethereum.enable().then((accounts) => {
                         user_address = accounts[0];
-                        console.log('user_address=');
-                        console.log(user_address);
                     });
                     if (user_address == null) {
                         return
@@ -81,8 +79,8 @@
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
                     const networkId = await provider.request({ method: 'net_version' });
-                    console.log('networkId=');
-                    console.log(networkId);
+                    //console.log('networkId=');
+                    //console.log(networkId);
                     switch (parseInt(networkId)) {
                             case "1":
                                     network = "Ethereum Mainnet";
@@ -105,10 +103,12 @@
                             default:
                                     network = "Unknown Network";
                     }
-                    console.log('networkI=');
-                    console.log(network);
                 }
                 location.reload();
+                console.log('networkI=');
+                console.log(network);
+                console.log('user_address=');
+                console.log(user_address);
             }
 
             

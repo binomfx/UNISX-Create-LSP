@@ -65,11 +65,11 @@
             const accountPromise = new Promise(_accountPromiseResolver => {
             accountPromiseResolver = _accountPromiseResolver
             
-            function getNetwork () {
+            function getNetwork() {
                 return (network);
             }
                 
-            function getUserAddress () {
+            function getUserAddress() {
                 return (user_address);
             }
             const onMetamaskLoad = new Promise(resolve => {
@@ -172,7 +172,7 @@ export function isConnected(){
             }
 
             
-            function checkWallet () {
+            function checkWallet() {
                 if (window.ethereum && window.ethereum.isConnected()) {
                     console.log('Metamask is connected!');
                     window.ethereum.enable().then((accounts) => {
@@ -205,14 +205,14 @@ export function isConnected(){
         
         
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
-    <script type="text/javascript">checkWallet ();</script>
+    <script type="text/javascript">checkWallet();</script>
     <table>
         <tr>
             <td class="logo">LSP</td>
             <td>Network:</td>
-            <td class="val1"><script type="text/javascript">document.write (getNetwork ());</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getNetwork());</script></td>
             <td>Address:</td>
-            <td class="val1"><script type="text/javascript">document.write (getUserAddress ());</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getUserAddress());</script></td>
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>

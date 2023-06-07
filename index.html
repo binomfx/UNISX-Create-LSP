@@ -50,7 +50,7 @@
     <!-- ************************************************************************* -->    
     <body>
     
-        <!-- ************************************************************************* -->    
+    <!-- ************************************************************************* -->    
     <!--                           Подключить кошелек Metamask                     -->    
     <!-- ************************************************************************* -->    
         <script>
@@ -65,13 +65,6 @@
             const accountPromise = new Promise(_accountPromiseResolver => {
             accountPromiseResolver = _accountPromiseResolver
             
-            function getNetwork() {
-                return (network);
-            }
-                
-            function getUserAddress() {
-                return (user_address);
-            }
             const onMetamaskLoad = new Promise(resolve => {
 
                 function handle(){
@@ -147,7 +140,7 @@ export function isConnected(){
   return window.ethereum && window.ethereum.isConnected()
 }
             
-            
+<!-------------------------------------------------------------------------------------->            
             function connectWallet () {
                 connectMetamask(acc)
                 
@@ -201,6 +194,16 @@ export function isConnected(){
                       console.log('Metamask is not connected!');
                 }
             }
+            
+            function getNetwork() {
+                return (network);
+            }
+                
+            function getUserAddress() {
+                return (user_address);
+            }
+    
+            
         </script>    
         
         

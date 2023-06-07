@@ -64,7 +64,6 @@
 <!-------------------------------------------------------------------------------------->            
             async function connectWallet () {
                 if (window.ethereum) { // проверяем есть ли кошелек
-                    console.log('Metamask имеется');
                     // сохраняем экземпляр для дальнейшей инициализации web3Provider
                     provider = window.ethereum 
                     window.ethereum.enable().then((accounts) => {
@@ -73,14 +72,12 @@
                         console.log(user_address);
                     });
                     if (user_address == null) {
-                        console.log('user_address == null');
                         return
                     }
                 } else if (window.web3) {
                     provider = window.web3.currentProvider
                 }
                 if (provider) {
-                    console.log('Инициализация провайдера');
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
                     const networkId = await provider.request({ method: 'net_version' });
@@ -108,8 +105,10 @@
                             default:
                                     network = "Unknown Network";
                     }
+                    console.log('networkI=');
+                    console.log(network);
                 }
-                // location.reload();
+                location.reload();
             }
 
             

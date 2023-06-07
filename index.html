@@ -90,6 +90,7 @@
 
             
             function checkWallet() {
+                console.log(window.ethereum.isConnected());
                 if (window.ethereum && window.ethereum.isConnected()) {
                     console.log('Metamask is connected!');
                     window.ethereum.enable().then((accounts) => {

@@ -62,7 +62,7 @@
 
             
 <!-------------------------------------------------------------------------------------->            
-            function connectWallet () {
+            async function connectWallet () {
                 if (window.ethereum) { // проверяем есть ли кошелек
                     console.log('Metamask имеется');
                     // сохраняем экземпляр для дальнейшей инициализации web3Provider

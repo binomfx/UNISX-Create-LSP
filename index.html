@@ -55,9 +55,16 @@
             let provider = null
             class MetamaskError extends Error {}
             let accountPromiseResolver
-            export const accountPromise = new Promise(_accountPromiseResolver => {
+            const accountPromise = new Promise(_accountPromiseResolver => {
             accountPromiseResolver = _accountPromiseResolver
             
+            function getNetwork () {
+                return (network);
+            }
+                
+            function getUserAddress () {
+                return (user_address);
+            }
             const onMetamaskLoad = new Promise(resolve => {
 
                 function handle(){
@@ -202,9 +209,9 @@ export function isConnected(){
         <tr>
             <td class="logo">LSP</td>
             <td>Network:</td>
-            <td class="val1"><script type="text/javascript">document.write (network);</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getUserNetwork ());</script></td>
             <td>Address:</td>
-            <td class="val1"><script type="text/javascript">document.write (user_address);</script></td>
+            <td class="val1"><script type="text/javascript">document.write (getUserAddress ());</script></td>
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>

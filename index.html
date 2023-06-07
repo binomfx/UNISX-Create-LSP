@@ -69,13 +69,14 @@
                     provider = window.ethereum 
                     window.ethereum.enable().then((accounts) => {
                         user_address = accounts[0];
+                        console.log('user_address=');
+                        console.log(user_address);
                     });
                     if (user_address == null) {
                         console.log('user_address == null');
                         return
                     }
                 } else if (window.web3) {
-                    console.log('Провайдер имеется');
                     provider = window.web3.currentProvider
                 }
                 if (provider) {
@@ -83,6 +84,7 @@
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
                     const networkId = await provider.request({ method: 'net_version' });
+                    console.log('networkId=');
                     console.log(networkId);
                 }
                 // location.reload();

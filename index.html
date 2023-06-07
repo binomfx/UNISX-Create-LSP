@@ -83,6 +83,7 @@
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
                     const networkId = await provider.request({ method: 'net_version' });
+                    console.log(networkId);
                 }
                 // location.reload();
             }

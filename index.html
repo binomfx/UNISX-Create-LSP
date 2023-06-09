@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LSP Creator</title>
         <style>
-            .line {
+            .b1 {
+		background: blue; /* Синий цвет фона */ 
+    		color: white; /* Белые буквы */ 
+            }
+
+	    .line {
                 border-bottom: 2px solid #000; /* Параметры линии */
                 vertical-align: center;
             }
@@ -168,7 +173,7 @@
             <td class="val1"><script type="text/javascript">document.write (getNetwork());</script></td>
             <td>Address:</td>
             <td class="val1"><script type="text/javascript">document.write (getUserAddress());</script></td>
-            <td><button bgcolor="#0000FF" onclick="connectWallet();">Connect</button></td>
+            <td><button class="b1" onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
 
@@ -252,7 +257,7 @@
     <h2 class="lntxt">Create</h2>
     <hr />
     <small>
-    <button bgcolor="#0000FF" onclick="___();">Create</button>&nbsp;&nbsp;<button onclick="___();">Cancel</button>
+    <button class="b1" onclick="___();">Create</button>&nbsp;&nbsp;<button onclick="___();">Cancel</button>
     <p>Address of the long short pair contract:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lspContractAddress</p>
     <p>Address of the long synthetic token contract:&nbsp; &nbsp; &nbsp;longTokenContractAddress</p>
     <p>Address of the short&nbsp;synthetic token contract:&nbsp; &nbsp; &nbsp;shortTokenContractAddress</p>

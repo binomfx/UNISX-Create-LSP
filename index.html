@@ -176,7 +176,8 @@
     <!-- Параметры синтетика -->    
     <h2 class="lntxt">Synt Parameters</h2>
     <hr />
-    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="width:1000px">
+	<small>
+	<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" style="width:1000px">
 	<tbody>
 		<tr>
 			<td>
@@ -196,15 +197,22 @@
 			</td>
 		</tr>
 		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td>
+			<p>Name of the long synthetic token to be created</p>
+			<p>Symbol of the long synthetic token to be created</p>
+			<p>Name of the short synthetic token to be created</p>
+			<p>Symbol of the short synthetic token to be created</p>
+			</td>
+			<td>
+			<p>longSynthName</p>
+			<p>longSynthSymbol</p>
+			<p>shortSynthName</p>
+			<p>shortSynthSymbol</p>
+			</td>
 			<td>
 			<p>Expiration timestamp (Unix format)</p>
-
 			<p><input maxlength="25" name="expirationTimestamp" required="required" size="25" type="text" /></p>
-
 			<p>Payout logic contract</p>
-
 			<p><select name="financialProductLibrary" required="required">
 				<option value="1">Linear LSP</option>
 				<option value="2">Covered call LSP</option>
@@ -227,6 +235,7 @@
 		</tr>
 	</tbody>
     </table>
+    </small>
 
     <p>&nbsp;</p>
         

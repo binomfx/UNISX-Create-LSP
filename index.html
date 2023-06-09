@@ -5,11 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LSP Creator</title>
         <style>
-            .b1 {
-		background: blue; /* Синий цвет фона */ 
-    		color: white; /* Белые буквы */ 
-            }
-
 	    .line {
                 border-bottom: 2px solid #000; /* Параметры линии */
                 vertical-align: center;
@@ -160,8 +155,42 @@
                 console.log(user_address);
                 return (user_address);
             }
-    
-            
+
+	    function setPairName (value) {
+	    	localStorage.setItem("pairName",value);
+		let longSynthName = "l" + value;   
+		let shortSynthName = "s" + value;
+		localStorage.setItem("longSynthName",longSynthName);
+		localStorage.setItem("shortSynthName",shortSynthName);
+	    }
+		
+	    function setSynthSymbol(value) {
+	    	localStorage.setItem("syntSymbol",value);
+		let longSynthSymbol = "l" + value;   
+		let shortSynthSymbol = "s" + value;
+		localStorage.setItem("longSynthSymbol",longSynthSymbol);
+		localStorage.setItem("shortSynthSymbol",shortSynthSymbol);
+	    }
+		
+	    function cancelAllData() {
+	    	localStorage.setItem("pairName",null);
+	    	localStorage.setItem("syntSymbol",null);
+		localStorage.setItem("longSynthName",null);
+		localStorage.setItem("shortSynthName",null);
+		localStorage.setItem("longSynthSymbol",null);
+		localStorage.setItem("shortSynthSymbol",null);
+		localStorage.setItem("priceID",null);
+		localStorage.setItem("expirationTimestamp",null);
+		localStorage.setItem("financialProductLibrary",null);
+		localStorage.setItem("collateralToken",null);
+		localStorage.setItem("collaterlPerPair",null);
+		localStorage.setItem("proposerReward",null);
+		localStorage.setItem("optimisticOracleLivenessTime",null);
+		localStorage.setItem("optimisticOracleProposerBond",null);
+		    
+      		location.reload();
+	    }
+		
         </script>    
         
         
@@ -173,7 +202,7 @@
             <td class="val1"><script type="text/javascript">document.write (getNetwork());</script></td>
             <td>Address:</td>
             <td class="val1"><script type="text/javascript">document.write (getUserAddress());</script></td>
-            <td><button class="b1" onclick="connectWallet();">Connect</button></td>
+            <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
 
@@ -187,15 +216,15 @@
 		<tr>
 			<td>
 			<p>Name of the long short pair contract</p>
-			<p><input maxlength="25" name="pairName" required="required" size="25" type="text" /></p>
+			<p><input maxlength="25" name="pairName" required="required" size="25" type="text" onchange="setPairName(this.value)" /></p>
 			</td>
 			<td>
 			<p>Synth Symbol (4 chars)</p>
-			<p><input maxlength="4" name="syntSymbol" required="required" size="25" type="text" /></p>
+			<p><input maxlength="4" name="synthSymbol" required="required" size="25" type="text" onchange="setSynthSymbol(this.value)" /></p>
 			</td>
 			<td>
 			<p>Name of registered price identifier</p>
-			<p><input maxlength="25" name="priceID" required="required" size="25" type="text" /></p>
+			<p><input maxlength="25" name="priceID" required="required" size="25" type="text" onchange="localStorage.setItem("priceID",this.value)" /></p>
 			</td>
 		</tr>
 		<tr>
@@ -206,16 +235,16 @@
 			<p>Symbol of the short synthetic token to be created:</p>
 			</td>
 			<td>
-			<p>longSynthName</p>
-			<p>longSynthSymbol</p>
-			<p>shortSynthName</p>
-			<p>shortSynthSymbol</p>
+			<p><script type="text/javascript">document.write (localStorage.getItem("longSynthName"));</script></p>
+			<p><script type="text/javascript">document.write (localStorage.getItem("longSynthSymbol"));</script></p>
+			<p><script type="text/javascript">document.write (localStorage.getItem("shortSynthName"));</script></p>
+			<p><script type="text/javascript">document.write (localStorage.getItem("shortSynthSymbol"));</script></p>
 			</td>
 			<td>
 			<p>Expiration timestamp (Unix format)</p>
-			<p><input maxlength="25" name="expirationTimestamp" required="required" size="25" type="text" /></p>
+			<p><input maxlength="25" name="expirationTimestamp" required="required" size="25" type="text" onchange="localStorage.setItem("expirationTimestamp",this.value)" /></p>
 			<p>Payout logic contract</p>
-			<p><select name="financialProductLibrary" required="required">
+			<p><select name="financialProductLibrary" required="required" onchange="localStorage.setItem("financialProductLibrary",this.value)">
 				<option value="1">Linear LSP</option>
 				<option value="2">Covered call LSP</option>
 				<option value="3">Floored linear LSP</option>
@@ -225,13 +254,11 @@
 		<tr>
 			<td>
 			<p>Address of collateral token contract&nbsp; &nbsp;&nbsp;</p>
-
-			<p><input maxlength="45" name="collateralToken" required="required" size="25" type="text" /></p>
+			<p><input maxlength="45" name="collateralToken" required="required" size="25" type="text" onchange="localStorage.setItem("collateralToken",this.value)" /></p>
 			</td>
 			<td>
 			<p>Collateral requirements to mint one pair of synthetics tokens</p>
-
-			<p><input maxlength="25" name="collaterlPerPair" required="required" size="25" type="text" /></p>
+			<p><input maxlength="25" name="collaterlPerPair" required="required" size="25" type="text" onchange="localStorage.setItem("collaterlPerPair",this.value)" /></p>
 			</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -245,11 +272,11 @@
     <hr />
     <small>
     <p>Optimistic oracle reward amount, pulled from the caller of the expire function</p>
-    <p><input maxlength="25" name="proposerReward" size="25" type="text" /></p>
+    <p><input maxlength="25" name="proposerReward" size="25" type="text" onchange="localStorage.setItem("proposerReward",this.value)" /></p>
     <p>Optimistic oracle liveness time for price requests</p>
-    <p><input maxlength="25" name="optimisticOracleLivenessTime" size="25" type="text" /></p>
+    <p><input maxlength="25" name="optimisticOracleLivenessTime" size="25" type="text" onchange="localStorage.setItem("optimisticOracleLivenessTime",this.value)" /></p>
     <p>Optimistic oracle proposer bond for price requests</p>
-    <p><input maxlength="25" name="jptimisticOracleProposerBond" size="25" type="text" /></p>
+    <p><input maxlength="25" name="optimisticOracleProposerBond" size="25" type="text" onchange="localStorage.setItem("optimisticOracleProposerBond",this.value)" /></p>
     </small>
 
 
@@ -257,7 +284,7 @@
     <h2 class="lntxt">Create</h2>
     <hr />
     <small>
-    <button class="b1" onclick="___();">Create</button>&nbsp;&nbsp;<button onclick="___();">Cancel</button>
+    <button onclick="___();">Create</button>&nbsp;&nbsp;<button onclick="cancelAllData();">Cancel</button>
     <p>Address of the long short pair contract:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lspContractAddress</p>
     <p>Address of the long synthetic token contract:&nbsp; &nbsp; &nbsp;longTokenContractAddress</p>
     <p>Address of the short&nbsp;synthetic token contract:&nbsp; &nbsp; &nbsp;shortTokenContractAddress</p>

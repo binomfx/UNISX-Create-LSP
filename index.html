@@ -182,26 +182,23 @@
 		<tr>
 			<td>
 			<p>Name of the long short pair contract</p>
-
 			<p><input maxlength="25" name="pairName" required="required" size="25" type="text" /></p>
 			</td>
 			<td>
 			<p>Synth Symbol (4 chars)</p>
-
 			<p><input maxlength="4" name="syntSymbol" required="required" size="25" type="text" /></p>
 			</td>
 			<td>
 			<p>Name of registered price identifier</p>
-
 			<p><input maxlength="25" name="priceID" required="required" size="25" type="text" /></p>
 			</td>
 		</tr>
 		<tr>
 			<td>
-			<p>Name of the long synthetic token to be created</p>
-			<p>Symbol of the long synthetic token to be created</p>
-			<p>Name of the short synthetic token to be created</p>
-			<p>Symbol of the short synthetic token to be created</p>
+			<p>Name of the long synthetic token to be created:</p>
+			<p>Symbol of the long synthetic token to be created:</p>
+			<p>Name of the short synthetic token to be created:</p>
+			<p>Symbol of the short synthetic token to be created:</p>
 			</td>
 			<td>
 			<p>longSynthName</p>
@@ -236,9 +233,7 @@
 	</tbody>
     </table>
     </small>
-
     <p>&nbsp;</p>
-        
         
     <!-- Параметры оракула -->    
     <h2 class="lntxt">OO Parameters</h2>
@@ -256,6 +251,12 @@
     <!-- Деплой синтетика -->    
     <h2 class="lntxt">Create</h2>
     <hr />
+    <small>
+    <p><input name="CreateButton" type="button" value="Create" />&nbsp;&nbsp;<input name="CancelButton" type="button" value="Cancel" />&nbsp;</p>
+    <p>Address of the long short pair contract:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lspContractAddress</p>
+    <p>Address of the long synthetic token contract:&nbsp; &nbsp; &nbsp;longTokenContractAddress</p>
+    <p>Address of the short&nbsp;synthetic token contract:&nbsp; &nbsp; &nbsp;shortTokenContractAddress</p>
+    </small>
 
     </body>
 </html>

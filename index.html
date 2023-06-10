@@ -54,11 +54,17 @@
     <!--                           Подключить кошелек Metamask                     -->    
     <!-- ************************************************************************* -->    
         <script>
-            
-            let network= 'none 1'
-            let user_address = 'none 2'
-            let web3 = null
-            let provider = null
+		const lspCreatorAddress = '0x5EcA3e8CA5B69279b3D075C52Bceff225570b4Ef'; //GOERLI
+		const lspCreatorABI = [/* Описание ABI контракта */];
+    	
+		// Create Web3 instance
+		const Web3 = require('web3');
+	    	const web3 = new Web3(window.ethereum);
+		
+            	let network= 'none 1'
+            	let user_address = 'none 2'
+            	let web3 = null
+            	let provider = null
 
             
 <!-------------------------------------------------------------------------------------->            
@@ -80,9 +86,6 @@
                     // инициалзируем web3 provider
                     //web3 = new ethers.providers.Web3Provider(provider, 'any')
                     localStorage.setItem("networkId",await provider.request({ method: 'net_version' }));
-                    //const networkId = await provider.request({ method: 'net_version' });
-                    //console.log('networkId=');
-                    //console.log(networkId);
                     switch (localStorage.getItem("networkId")) {
                             case "1":
                                     network = "Ethereum Mainnet";
@@ -109,38 +112,8 @@
                 }
     		setNetwork();
 		setUserAddress();
-            }
-
-            
-            function checkWallet() {
-                console.log(window.ethereum.isConnected());
-                if (window.ethereum && window.ethereum.isConnected()) {
-                    console.log('Metamask is connected!');
-                    window.ethereum.enable().then((accounts) => {
-                            user_address = accounts[0];
-                    });
-                   switch (parseInt(window.ethereum.chainId)) {
-                            case "1":
-                                    network = "Ethereum Mainnet";
-                                    break;
-                            case "3":
-                                    network = "Ropsten Testnet";
-                                    break;
-                            case "4":
-                                    network = "Rinkeby Testnet";
-                                    break;
-                            case "5":
-                                    network = "Goerli Testnet";
-                                    break;
-                            case "42":
-                                    network = "Kovan Testnet";
-                                    break;
-                            default:
-                                    network = "Unknown Network";
-                    }
-                } else {
-                      console.log('Metamask is not connected!');
-                }
+		    
+		contract = new web3.eth.Contract(contractABI, contractAddress);
             }
             
             function setNetwork() {
@@ -220,7 +193,17 @@
                 
 		console.log('longSynthSymbol='+longSynthSymbol);
                 console.log('priceID='+priceID);
-	    
+
+		// Сформировать параметры
+		    
+		// Создать синтетик
+		contract.methods.createLongShortPair(params).call()
+  			.then(result => {
+    				console.log('LongShortPairCreator result:', result);
+  			})
+  			.catch(error => {
+    				console.error('LongShortPairCreator error:', error);
+  			});
 	    }
 		
         </script>    

@@ -199,6 +199,29 @@
       		location.reload();
 	    }
 		
+	    function deploySynth() {
+	    	let pairName = localStorage.getItem("pairName");
+	    	let syntSymbo = localStorage.getItem("syntSymbol");
+		let longSynthName = localStorage.getItem("longSynthName");
+		let shortSynthName = localStorage.getItem("shortSynthName");
+		let longSynthSymbol = localStorage.getItem("longSynthSymbol");
+		let shortSynthSymbol = localStorage.getItem("shortSynthSymbol");
+		let priceID = localStorage.getItem("priceID");
+		let expirationTimestamp = localStorage.getItem("expirationTimestamp");
+		let financialProductLibrary = localStorage.getItem("financialProductLibrary");
+		let collateralToken = localStorage.getItem("collateralToken");
+		let collaterlPerPair = localStorage.getItem("collaterlPerPair");
+		let proposerReward = localStorage.getItem("proposerReward");
+		let optimisticOracleLivenessTime = localStorage.getItem("optimisticOracleLivenessTime");
+		let optimisticOracleProposerBond = localStorage.getItem("optimisticOracleProposerBond");
+                
+		console.log('longSynthSymbol=');
+                console.log(longSynthSymbol);
+                console.log('priceID=');
+                console.log(priceID);
+	    
+	    }
+		
         </script>    
         
         
@@ -292,7 +315,7 @@
     <h2 class="lntxt">Create</h2>
     <hr />
     <small>
-    <button onclick="___();">Create</button>&nbsp;&nbsp;<button onclick="cancelAllData();">Cancel</button>
+    <button onclick="deploySynth();">Create</button>&nbsp;&nbsp;<button onclick="cancelAllData();">Cancel</button>
     <p>Address of the long short pair contract:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lspContractAddress</p>
     <p>Address of the long synthetic token contract:&nbsp; &nbsp; &nbsp;longTokenContractAddress</p>
     <p>Address of the short&nbsp;synthetic token contract:&nbsp; &nbsp; &nbsp;shortTokenContractAddress</p>

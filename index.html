@@ -144,15 +144,13 @@
             
             function getNetwork() {
                 network = localStorage.getItem("network");
-                console.log('network=');
-                console.log(network);
+                console.log('network=' + network);
                 return (network);
             }
                 
             function getUserAddress() {
                 user_address = localStorage.getItem("user_address");
-                console.log('user_address=');
-                console.log(user_address);
+                console.log('user_address=' + user_address);
                 return (user_address);
             }
 
@@ -162,6 +160,9 @@
 		let shortSynthName = "s" + value;
 		localStorage.setItem("longSynthName",longSynthName);
 		const n1 = document.getElementById('n1');
+		
+    		console.log('OLD longSynthName=' + n1.value);
+
 		n1.value = longSynthName;
 		localStorage.setItem("shortSynthName",shortSynthName);
 		const n3 = document.getElementById('n3');

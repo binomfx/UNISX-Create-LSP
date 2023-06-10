@@ -56,7 +56,8 @@
         <script>
 		const lspCreatorAddress = '0x5EcA3e8CA5B69279b3D075C52Bceff225570b4Ef'; //GOERLI
 		const lspCreatorABI = [/* Описание ABI контракта */];
-    	
+		var lspCreatorContract = null;
+		
 		// Create Web3 instance
 		const Web3 = require('web3');
 	    	const web3 = new Web3(window.ethereum);
@@ -113,7 +114,7 @@
     		setNetwork();
 		setUserAddress();
 		    
-		contract = new web3.eth.Contract(contractABI, contractAddress);
+		lspCreatorContract = new web3.eth.Contract(lspCreatorABI, lspCreatorAddress);
             }
             
             function setNetwork() {

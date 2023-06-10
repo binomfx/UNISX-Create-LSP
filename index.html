@@ -107,9 +107,8 @@
                     }
                     localStorage.setItem("network",network);
                 }
-    		getNetwork();
-		getUserAddress();
-                //location.reload();
+    		setNetwork();
+		setUserAddress();
             }
 
             
@@ -144,7 +143,7 @@
                 }
             }
             
-            function getNetwork() {
+            function setNetwork() {
                 network = localStorage.getItem("network");
                 console.log('network=' + network);
 		const st_network = document.getElementById('st_network');
@@ -152,7 +151,7 @@
 		return (network);
             }
                 
-            function getUserAddress() {
+            function setUserAddress() {
                 user_address = localStorage.getItem("user_address");
                 console.log('user_address=' + user_address);
 		const st_adr = document.getElementById('st_adr');
@@ -237,6 +236,11 @@
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
+	    
+    <script>
+	setNetwork();
+	setUserAddress();
+    </script>
         
     <!-- Параметры синтетика -->    
     <h2 class="lntxt">Synt Parameters</h2>

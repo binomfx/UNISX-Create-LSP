@@ -161,12 +161,12 @@
 		localStorage.setItem("longSynthName",longSynthName);
 		const n1 = document.getElementById('n1');
 		
-    		console.log('OLD longSynthName=' + n1.value);
+    		console.log('OLD longSynthName=' + n1.innerHTML);
 
-		n1.value = longSynthName;
+		n1.innerHTML = longSynthName;
 		localStorage.setItem("shortSynthName",shortSynthName);
 		const n3 = document.getElementById('n3');
-		n3.value = shortSynthName;
+		n3.innerHTML = shortSynthName;
 	    }
 		
 	    function setSynthSymbol(value) {
@@ -175,10 +175,10 @@
 		let shortSynthSymbol = "s" + value;
 		localStorage.setItem("longSynthSymbol",longSynthSymbol);
 		const n2 = document.getElementById('n2');
-		n2.value = longSynthSymbol;
+		n2.innerHTML = longSynthSymbol;
 		localStorage.setItem("shortSynthSymbol",shortSynthSymbol);
 		const n4 = document.getElementById('n4');
-		n4.value = shortSynthSymbol;
+		n4.innerHTML = shortSynthSymbol;
 	    }
 		
 	    function cancelAllData() {

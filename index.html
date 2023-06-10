@@ -162,10 +162,10 @@
 		let shortSynthName = "s" + value;
 		localStorage.setItem("longSynthName",longSynthName);
 		const n1 = document.getElementById('n1');
-		myInput.value = longSynthName;
+		n1.value = longSynthName;
 		localStorage.setItem("shortSynthName",shortSynthName);
 		const n3 = document.getElementById('n3');
-		myInput.value = shortSynthName;
+		n3.value = shortSynthName;
 	    }
 		
 	    function setSynthSymbol(value) {
@@ -174,10 +174,10 @@
 		let shortSynthSymbol = "s" + value;
 		localStorage.setItem("longSynthSymbol",longSynthSymbol);
 		const n2 = document.getElementById('n2');
-		myInput.value = longSynthSymbol;
+		n2.value = longSynthSymbol;
 		localStorage.setItem("shortSynthSymbol",shortSynthSymbol);
 		const n4 = document.getElementById('n4');
-		myInput.value = shortSynthSymbol;
+		n4.value = shortSynthSymbol;
 	    }
 		
 	    function cancelAllData() {
@@ -207,9 +207,9 @@
         <tr class="status2">
             <td class="logo">LSP</td>
             <td>Network:</td>
-            <td class="val1"><script type="text/javascript">document.write (getNetwork());</script></td>
+            <td class="val1" id="st_network"><script type="text/javascript">document.write (getNetwork());</script></td>
             <td>Address:</td>
-            <td class="val1"><script type="text/javascript">document.write (getUserAddress());</script></td>
+            <td class="val1" id="st_adr"><script type="text/javascript">document.write (getUserAddress());</script></td>
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
@@ -232,7 +232,7 @@
 			</td>
 			<td>
 			<p>Name of registered price identifier</p>
-			<p><input maxlength="25" name="priceID" required="required" size="25" type="text" onchange="localStorage.setItem("priceID",this.value)" /></p>
+			<p><input maxlength="25" name="priceID" required="required" size="25" type="text" onchange='localStorage.setItem("priceID",this.value)' /></p>
 			</td>
 		</tr>
 		<tr>
@@ -250,9 +250,9 @@
 			</td>
 			<td>
 			<p>Expiration timestamp (Unix format)</p>
-			<p><input maxlength="25" name="expirationTimestamp" required="required" size="25" type="text" onchange="localStorage.setItem("expirationTimestamp",this.value)" /></p>
+			<p><input maxlength="25" name="expirationTimestamp" required="required" size="25" type="text" onchange='localStorage.setItem("expirationTimestamp",this.value)' /></p>
 			<p>Payout logic contract</p>
-			<p><select name="financialProductLibrary" required="required" onchange="localStorage.setItem("financialProductLibrary",this.value)">
+			<p><select name="financialProductLibrary" required="required" onchange='localStorage.setItem("financialProductLibrary",this.value)'>
 				<option value="1">Linear LSP</option>
 				<option value="2">Covered call LSP</option>
 				<option value="3">Floored linear LSP</option>

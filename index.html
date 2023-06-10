@@ -107,7 +107,9 @@
                     }
                     localStorage.setItem("network",network);
                 }
-                location.reload();
+    		getNetwork();
+		getUserAddress();
+                //location.reload();
             }
 
             
@@ -224,7 +226,6 @@
 		
         </script>    
         
-        
     <!-- Строка состояния показывает наименование сети, адрес подключенного кошелька и кнопку подключения кошелька -->    
     <table class="status1">
         <tr class="status2">
@@ -236,11 +237,6 @@
             <td><button onclick="connectWallet();">Connect</button></td>
         </tr>
     </table>
-    <script>
-    	getNetwork();
-	getUserAddress();
-    </scrpt>
-
         
     <!-- Параметры синтетика -->    
     <h2 class="lntxt">Synt Parameters</h2>

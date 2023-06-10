@@ -215,10 +215,8 @@
 		let optimisticOracleLivenessTime = localStorage.getItem("optimisticOracleLivenessTime");
 		let optimisticOracleProposerBond = localStorage.getItem("optimisticOracleProposerBond");
                 
-		console.log('longSynthSymbol=');
-                console.log(longSynthSymbol);
-                console.log('priceID=');
-                console.log(priceID);
+		console.log('longSynthSymbol='+longSynthSymbol);
+                console.log('priceID='+priceID);
 	    
 	    }
 		
@@ -285,11 +283,11 @@
 		<tr>
 			<td>
 			<p>Address of collateral token contract&nbsp; &nbsp;&nbsp;</p>
-			<p><input maxlength="45" name="collateralToken" required="required" size="25" type="text" onchange="localStorage.setItem("collateralToken",this.value)" /></p>
+			<p><input maxlength="45" name="collateralToken" required="required" size="25" type="text" onchange='localStorage.setItem("collateralToken",this.value)' /></p>
 			</td>
 			<td>
 			<p>Collateral requirements to mint one pair of synthetics tokens</p>
-			<p><input maxlength="25" name="collaterlPerPair" required="required" size="25" type="text" onchange="localStorage.setItem("collaterlPerPair",this.value)" /></p>
+			<p><input maxlength="25" name="collaterlPerPair" required="required" size="25" type="text" onchange='localStorage.setItem("collaterlPerPair",this.value)' /></p>
 			</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -303,11 +301,11 @@
     <hr />
     <small>
     <p>Optimistic oracle reward amount, pulled from the caller of the expire function</p>
-    <p><input maxlength="25" name="proposerReward" size="25" type="text" onchange="localStorage.setItem("proposerReward",this.value)" /></p>
+    <p><input maxlength="25" name="proposerReward" size="25" type="text" onchange='localStorage.setItem("proposerReward",this.value)' /></p>
     <p>Optimistic oracle liveness time for price requests</p>
-    <p><input maxlength="25" name="optimisticOracleLivenessTime" size="25" type="text" onchange="localStorage.setItem("optimisticOracleLivenessTime",this.value)" /></p>
+    <p><input maxlength="25" name="optimisticOracleLivenessTime" size="25" type="text" onchange='localStorage.setItem("optimisticOracleLivenessTime",this.value)' /></p>
     <p>Optimistic oracle proposer bond for price requests</p>
-    <p><input maxlength="25" name="optimisticOracleProposerBond" size="25" type="text" onchange="localStorage.setItem("optimisticOracleProposerBond",this.value)" /></p>
+    <p><input maxlength="25" name="optimisticOracleProposerBond" size="25" type="text" onchange='localStorage.setItem("optimisticOracleProposerBond",this.value)' /></p>
     </small>
 
 

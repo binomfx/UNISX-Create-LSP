@@ -161,8 +161,11 @@
 		let longSynthName = "l" + value;   
 		let shortSynthName = "s" + value;
 		localStorage.setItem("longSynthName",longSynthName);
+		const n1 = document.getElementById('n1');
+		myInput.value = longSynthName;
 		localStorage.setItem("shortSynthName",shortSynthName);
-		location.reload();
+		const n3 = document.getElementById('n3');
+		myInput.value = shortSynthName;
 	    }
 		
 	    function setSynthSymbol(value) {
@@ -170,8 +173,11 @@
 		let longSynthSymbol = "l" + value;   
 		let shortSynthSymbol = "s" + value;
 		localStorage.setItem("longSynthSymbol",longSynthSymbol);
+		const n2 = document.getElementById('n2');
+		myInput.value = longSynthSymbol;
 		localStorage.setItem("shortSynthSymbol",shortSynthSymbol);
-		location.reload();
+		const n4 = document.getElementById('n4');
+		myInput.value = shortSynthSymbol;
 	    }
 		
 	    function cancelAllData() {
@@ -237,10 +243,10 @@
 			<p>Symbol of the short synthetic token to be created:</p>
 			</td>
 			<td>
-			<p><script type="text/javascript">document.write (localStorage.getItem("longSynthName"));</script></p>
-			<p><script type="text/javascript">document.write (localStorage.getItem("longSynthSymbol"));</script></p>
-			<p><script type="text/javascript">document.write (localStorage.getItem("shortSynthName"));</script></p>
-			<p><script type="text/javascript">document.write (localStorage.getItem("shortSynthSymbol"));</script></p>
+			<p id="n1">-</p>
+			<p id="n2">-</p>
+			<p id="n3">-</p>
+			<p id="n4">-</p>
 			</td>
 			<td>
 			<p>Expiration timestamp (Unix format)</p>
